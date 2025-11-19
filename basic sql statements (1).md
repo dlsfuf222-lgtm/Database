@@ -176,7 +176,7 @@ DELETE FROM student
 ```
 ## TRUNCATE 문으로 전체 행 삭제(추천)
 ```sql
-TRUNCATE TABLE 테이블명;
+TRUNCATE TABLE student;
 ```
 
 ---
