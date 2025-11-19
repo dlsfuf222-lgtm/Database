@@ -170,7 +170,13 @@ WHERE name = '배지호';
 DELETE FROM student
 WHERE email NOT LIKE '%@example.com';
 ```
-
+## 전체 행 삭제
+```sq1
+DELETE FROM student
+```
+## TRUNCATE 문으로 전체 행 삭제
+```sq1
+TRUNCATE TABLE 테이블명
 ---
 
 # 📌 9️⃣ IN / NOT IN
