@@ -150,6 +150,19 @@ SELECT
 FROM Score
 GROUP BY subject, grade;
 ```
+GROUP BY가 실행될 때, grede의 존재를 알 수 없음.
+왜냐하면 CASE WHEN 절에서 생성되기 때문에 GROUP BY 절은 다음과 같이 실행됨
+```sql
+GROUP BY subject,
+     (CASE
+         WHEN score >= 90 THEN 'A'
+         WHEN score >= 80 THEN 'B'
+         WHEN score >= 70 THEN 'C'
+         WHEN score >= 60 THEN 'D'    
+         ELSE 'F'
+     END)
+```
+위와 같이 그룹핑을 수행한 후, select절이 실행됨(select 절에 있던 case when은 더 이상 수행하지 않음).
 
 ---
 
